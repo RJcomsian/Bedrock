@@ -1,0 +1,210 @@
+/* Generic Styles Start */
+body {
+	font-family: $font-raleway;
+	font-size: 16px;
+	font-weight: 400;
+	color: $tm-white;
+	-moz-font-feature-settings: "lnum";
+	-webkit-font-feature-settings: "lnum";
+	font-feature-settings: "lnum";
+	background: $tm-black;
+}
+
+.wow {
+	visibility: hidden;
+}
+
+p {
+	font-size: 16px;
+	line-height: 38px;
+	font-style: normal;
+	margin-bottom: 20px;
+}
+
+.hero-btn {
+	color: $tm-ocean;
+	display: block;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 24px;
+	text-align: center;
+	border: 3px solid $tm-ocean;
+	letter-spacing: 0.25em;
+	text-transform: uppercase;
+	padding: 15px 20px;
+	max-width: 333px;
+	margin: auto;
+	transition: 0.3s;
+
+	&:hover {
+		background: $tm-ocean;
+		color: $tm-white;
+		text-decoration: none;
+		opacity: 1;
+	}
+}
+
+.page-header {
+	padding-left: 15px;
+	padding-right: 15px;
+
+	h1 {
+		color: $tm-white;
+		font-weight: bold;
+		font-size: 24px;
+		line-height: 30px;
+		margin-top: 30px;
+		margin-bottom: 30px;
+		text-transform: capitalize;
+	}
+}
+
+a {
+	color: $tm-white;
+	text-decoration: none !important;
+
+	&:hover {
+		opacity: 0.8;
+		text-decoration: underline;
+	}
+
+	span {
+		color: $tm-ocean !important;
+	}
+}
+
+span {
+	text-decoration: none !important;
+}
+
+/* START TOOLTIP STYLES */
+[tooltip] {
+	position: relative; /* opinion 1 */
+}
+
+/* Applies to all tooltips */
+[tooltip]::before,
+[tooltip]::after {
+	text-transform: none; /* opinion 2 */
+	font-size: 0.9em; /* opinion 3 */
+	line-height: 1;
+	user-select: none;
+	pointer-events: none;
+	position: absolute;
+	display: none;
+	opacity: 0;
+}
+
+[tooltip]::before {
+	content: "";
+	border: 5px solid transparent; /* opinion 4 */
+	z-index: 1001; /* absurdity 1 */
+}
+
+[tooltip]::after {
+	content: attr(tooltip); /* magic! */
+	text-align: center;
+	min-width: 3em;
+	max-width: 21em;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding: 1ch 1.5ch;
+	border-radius: 0.3ch;
+	box-shadow: 0 1em 2em -0.5em rgba(0, 0, 0, 0.35);
+	background: #333;
+	color: #fff;
+	z-index: 1000; /* absurdity 2 */
+}
+
+/* Make the tooltips respond to hover */
+[tooltip]:hover::before,
+[tooltip]:hover::after {
+	display: block;
+}
+
+/* don't show empty tooltips */
+[tooltip=""]::before,
+[tooltip=""]::after {
+	display: none !important;
+}
+
+/* FLOW: UP */
+[tooltip]:not([flow])::before,
+[tooltip][flow^="up"]::before {
+	bottom: 100%;
+	border-bottom-width: 0;
+	border-top-color: #333;
+}
+
+[tooltip]:not([flow])::after,
+[tooltip][flow^="up"]::after {
+	bottom: calc(100% + 5px);
+}
+
+[tooltip]:not([flow])::before,
+[tooltip]:not([flow])::after,
+[tooltip][flow^="up"]::before,
+[tooltip][flow^="up"]::after {
+	left: 50%;
+	transform: translate(-50%, -0.5em);
+}
+
+/* KEYFRAMES */
+@keyframes tooltips-vert {
+	to {
+		opacity: 0.9;
+		transform: translate(-50%, 0);
+	}
+}
+
+@keyframes tooltips-horz {
+	to {
+		opacity: 0.9;
+		transform: translate(0, -50%);
+	}
+}
+
+/* FX All The Things */
+[tooltip]:not([flow]):hover::before,
+[tooltip]:not([flow]):hover::after,
+[tooltip][flow^="up"]:hover::before,
+[tooltip][flow^="up"]:hover::after {
+	animation: tooltips-vert 300ms ease-out forwards;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {}
+
+/* End Small devices (landscape phones, 576px and up) */
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {}
+
+/* End Medium devices (tablets, 768px and up) */
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+	.hero-btn {
+		letter-spacing: 2px;
+		padding: 15px 10px;
+	}
+
+	.page-header {
+		h1 {
+			font-size: 36px;
+			line-height: 36px;
+		}
+	}
+}
+
+/* End Large devices (desktops, 992px and up) */
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+	.custom-container,
+	.container {
+		max-width: 1450px;
+	}
+}

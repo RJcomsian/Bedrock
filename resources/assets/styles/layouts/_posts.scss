@@ -1,0 +1,65 @@
+.member {
+	margin-bottom: 40px;
+
+	.image-wrapper {
+		height: 300px;
+		overflow: hidden;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	.item {
+		margin-top: 10px;
+
+		h3 {
+			font-size: 22px;
+			line-height: 36px;
+			color: $tm-white;
+			margin-bottom: 0;
+			text-align: center;
+		}
+
+		p {
+			font-size: 14px;
+			color: $tm-white;
+			margin-bottom: 0;
+			text-align: center;
+		}
+
+		a {
+			display: block;
+			max-width: 150px;
+			padding: 20px;
+			margin: auto;
+			color: $tm-white;
+			background: $tm-ocean;
+			text-align: center;
+			margin-top: 20px;
+			text-decoration: none;
+
+			&:hover {
+				color: $tm-white;
+			}
+		}
+	}
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {}
+
+/* End Small devices (landscape phones, 576px and up) */
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {}
+
+/* End Medium devices (tablets, 768px and up) */
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {}
+
+/* End Large devices (desktops, 992px and up) */
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}

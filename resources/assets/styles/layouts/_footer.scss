@@ -1,0 +1,30 @@
+.content-info {
+	background: $tm-ocean;
+	padding: 20px;
+	margin-top: 50px;
+
+	p {
+		color: $tm-white;
+		font-size: 20px;
+		margin-bottom: 0;
+		text-align: center;
+	}
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {}
+
+/* End Small devices (landscape phones, 576px and up) */
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {}
+
+/* End Medium devices (tablets, 768px and up) */
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {}
+
+/* End Large devices (desktops, 992px and up) */
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}
